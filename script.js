@@ -1,20 +1,16 @@
-var add = document.querySelector('#add')
-var remove = document.querySelector('#remove')
-var inp = document.querySelector('input')
-var ul = document.querySelector('ul')
+var strt = document.querySelector('#strt')
+var stop = document.querySelector('#stop')
+var h3 = document.querySelector('h3')
 
-var li;
-add.addEventListener('click',()=>{
-    if(inp.value===" "){}
-    else{
-       li = document.createElement('li')
-      li.textContent = inp.value;
-      ul.appendChild(li)
-      inp.value = ""
-    }
+var inp;
+strt.addEventListener('click',()=>{
+   var count = 0;
+   inp = setInterval(()=>{
+      h3.textContent = count;
+      count++
+   },1000)
+}) 
+
+stop.addEventListener('click',()=>{
+  clearInterval(inp)
 })
-
-remove.addEventListener('click',()=>{
-     ul.removeChild(li);
-   }
-)
